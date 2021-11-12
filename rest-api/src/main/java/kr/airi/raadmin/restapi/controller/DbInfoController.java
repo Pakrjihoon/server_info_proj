@@ -12,16 +12,16 @@ import java.util.List;
 @RequestMapping(value = "/api")
 public class DbInfoController {
 
-    private DbInfoService dbInfoRepository;
+    private DbInfoService dbInfoService;
 
     @Autowired
-    DbInfoController(DbInfoService dbInfoRepository) {
-        this.dbInfoRepository = dbInfoRepository;
+    DbInfoController(DbInfoService dbInfoService) {
+        this.dbInfoService = dbInfoService;
     }
 
     @GetMapping(value = "/dbinfo")
     @ResponseBody
     public List<DbInfo> getAllDbInfo() {
-        return dbInfoRepository.getAll();
+        return dbInfoService.getAll();
     }
 }
