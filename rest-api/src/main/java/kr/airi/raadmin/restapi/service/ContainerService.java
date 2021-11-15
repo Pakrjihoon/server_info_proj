@@ -4,6 +4,7 @@ import kr.airi.raadmin.restapi.dto.ContainerReqDto;
 import kr.airi.raadmin.restapi.dto.ContainerUdtDto;
 import kr.airi.raadmin.restapi.entity.Container;
 import kr.airi.raadmin.restapi.repository.ContainerRepository;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -49,5 +50,13 @@ public class ContainerService {
             containerRepository.save(getContainer);
         });
         return udtContainer;
+    }
+
+    @Transactional
+    public void delete(int number) {
+        Optional<Container> container = containerRepository.findById(number);
+        if(container.isPresent()) {
+            containerRepository.delete(container.get());
+        }
     }
 }

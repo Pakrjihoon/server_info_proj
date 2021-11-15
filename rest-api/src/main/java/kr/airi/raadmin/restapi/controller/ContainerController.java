@@ -45,4 +45,10 @@ public class ContainerController {
     public Optional<Container> updateContainer(@PathVariable ("number")int number, @RequestBody ContainerUdtDto containerUdtDto) {
         return containerService.update(number, containerUdtDto);
     }
+
+    @DeleteMapping(value = "/container/{number}")
+    @ResponseBody
+    public void deleteContainer(@PathVariable("number")int number){
+        containerService.delete(number);
+    }
 }
