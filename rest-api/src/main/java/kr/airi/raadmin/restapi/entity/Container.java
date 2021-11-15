@@ -1,6 +1,5 @@
 package kr.airi.raadmin.restapi.entity;
 
-
 import lombok.*;
 
 import javax.persistence.Column;
@@ -12,19 +11,20 @@ import javax.persistence.Table;
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
+@Table(name = "server_container")
 @AllArgsConstructor
-@Table(name = "server_dbinfo")
-public class DbInfo {
+@NoArgsConstructor
+public class Container {
+
     @Id
     private int number;
-
-    private String name;
+    private String container;
     private String content;
 
     @Column(name = "server_number")
     private int serverNumber;
 
-    private String kind;
+    @Column(name = "port_number")
+    private int portNumber;
 
 }

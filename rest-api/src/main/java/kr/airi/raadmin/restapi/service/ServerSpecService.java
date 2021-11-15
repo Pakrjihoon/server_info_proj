@@ -1,5 +1,6 @@
 package kr.airi.raadmin.restapi.service;
 
+import kr.airi.raadmin.restapi.dto.ServerSpecReqDto;
 import kr.airi.raadmin.restapi.entity.ServerSpec;
 import kr.airi.raadmin.restapi.repository.ServerSpecRepository;
 import org.springframework.stereotype.Service;
@@ -26,9 +27,9 @@ public class ServerSpecService {
         return serverSpecRepository.findAll();
     }
 
-//    @Transactional
-//    public Monitoring createOne(MonitoringReqDto req) {
-//        Monitoring monitoring = req.toEntity();
-//        return monitoring.save(monitoring);
-//    }
+    @Transactional
+    public ServerSpec createOne(ServerSpecReqDto req) {
+        ServerSpec serverSpec = req.toEntity();
+        return serverSpecRepository.save(serverSpec);
+    }
 }
