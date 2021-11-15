@@ -1,5 +1,6 @@
 package kr.airi.raadmin.restapi.service;
 
+import kr.airi.raadmin.restapi.dto.DbinfoReqDto;
 import kr.airi.raadmin.restapi.entity.DbInfo;
 import kr.airi.raadmin.restapi.repository.DbInfoRepository;
 import org.springframework.stereotype.Service;
@@ -26,9 +27,9 @@ public class DbInfoService {
         return dbInfoRepository.findAll();
     }
 
-//    @Transactional
-//    public Monitoring createOne(MonitoringReqDto req) {
-//        Monitoring monitoring = req.toEntity();
-//        return monitoring.save(monitoring);
-//    }
+    @Transactional
+    public DbInfo createOne(DbinfoReqDto req) {
+        DbInfo dbInfo = req.toEntity();
+        return dbInfoRepository.save(dbInfo);
+    }
 }
