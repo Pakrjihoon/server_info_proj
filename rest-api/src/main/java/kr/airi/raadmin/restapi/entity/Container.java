@@ -2,10 +2,7 @@ package kr.airi.raadmin.restapi.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Builder
@@ -26,5 +23,9 @@ public class Container {
 
     @Column(name = "port_number")
     private int portNumber;
+
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "server_number", insertable = false, updatable = false)
+    private ServerSpec serverSpec;
 
 }

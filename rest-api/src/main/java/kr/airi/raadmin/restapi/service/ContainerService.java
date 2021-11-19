@@ -4,7 +4,6 @@ import kr.airi.raadmin.restapi.dto.ContainerReqDto;
 import kr.airi.raadmin.restapi.dto.ContainerUdtDto;
 import kr.airi.raadmin.restapi.entity.Container;
 import kr.airi.raadmin.restapi.repository.ContainerRepository;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

@@ -1,6 +1,7 @@
 package kr.airi.raadmin.restapi.dto;
 
 import kr.airi.raadmin.restapi.entity.Container;
+
 import lombok.*;
 
 @ToString
@@ -9,7 +10,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContainerReqDto {
+public class ContainerResDto {
 
     private int number;
     private String container;
@@ -27,6 +28,4 @@ public class ContainerReqDto {
                 .portNumber(this.portNumber)
                 .build();
     }
-
-
 }
